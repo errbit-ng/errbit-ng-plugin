@@ -128,5 +128,8 @@ end
 
 ## Contributing
 
-Discuss any changes you'd like to make with the authors on the mailing list, or
-by opening a github issue.
+Bug reports and pull requests are welcome on GitHub at https://github.com/errbit-ng/errbit-ng-plugin.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
