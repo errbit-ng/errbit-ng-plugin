@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    errbit_plugin (0.6.0)
+    errbit-ng-plugin (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -78,8 +78,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  bundler
-  errbit_plugin!
+  errbit-ng-plugin!
   rake
   rspec
   standard
