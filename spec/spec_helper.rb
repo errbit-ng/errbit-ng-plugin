@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-if ENV["COVERAGE"]
-  require "simplecov"
-  if ENV["CI"]
-    require "coveralls"
-    Coveralls.wear!
-    SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
-      SimpleCov::Formatter::HTMLFormatter,
-      Coveralls::SimpleCov::Formatter
-    ]
-  end
+require "simplecov"
 
-  SimpleCov.start
+if ENV["CI"] == "yes"
+  require "simplecov-cobertura"
+
+  SimpleCov.formatter = SimpleCov::Formatter::CoberturaFormatter
+end
+
+SimpleCov.start do
+  enable_coverage :branch
+
+  primary_coverage :branch
 end
 
 require "errbit_plugin"
