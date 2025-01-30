@@ -14,8 +14,7 @@ module ErrbitPlugin
       key = klass.label
 
       if issue_trackers.has_key?(key)
-        raise AlreadyRegisteredError,
-          "issue_tracker '#{key}' already registered"
+        raise AlreadyRegisteredError, "issue_tracker '#{key}' already registered"
       end
 
       validate = ValidateIssueTracker.new(klass)
