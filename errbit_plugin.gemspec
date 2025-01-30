@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = ErrbitPlugin::VERSION
   spec.authors       = ["Stephen Crosby"]
   spec.email         = ["stevecrozz@gmail.com"]
-  spec.description   = %q{Base to create an errbit plugin}
-  spec.summary       = %q{Base to create an errbit plugin}
-  spec.homepage      = "http://github.com/errbit/errbit"
+  spec.description   = %q{Base to create an Errbit-NG plugins}
+  spec.summary       = %q{Base to create an Errbit-NG plugins}
+  spec.homepage      = "http://github.com/errbit-ng/errbit-ng"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
