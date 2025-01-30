@@ -4,5 +4,4 @@ source 'https://rubygems.org'
 gemspec
 
 gem 'rspec'
-gem 'guard'
 gem 'coveralls', :require => false
