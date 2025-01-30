@@ -1,7 +1,11 @@
-module ErrbitPlugin
-  class IncompatibilityError < StandardError; end
+# frozen_string_literal: true
 
-  class AlreadyRegisteredError < StandardError; end
+module ErrbitPlugin
+  class IncompatibilityError < StandardError
+  end
+
+  class AlreadyRegisteredError < StandardError
+  end
 
   module Registry
     @issue_trackers = {}

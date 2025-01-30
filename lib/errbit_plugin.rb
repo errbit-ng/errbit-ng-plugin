@@ -1,4 +1,6 @@
-# require "errbit_plugin/version"
+# frozen_string_literal: true
+
+require "errbit/ng/plugin/version"
 require "errbit_plugin/registry"
 require "errbit_plugin/issue_tracker"
 require "errbit_plugin/validate_issue_tracker"
