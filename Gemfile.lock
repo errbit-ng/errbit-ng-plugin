@@ -39,11 +39,6 @@ GEM
       pry (>= 0.13.0)
       shellany (~> 0.0)
       thor (>= 0.18.1)
-    guard-compat (1.2.1)
-    guard-rspec (4.7.3)
-      guard (~> 2.1)
-      guard-compat (~> 1.1)
-      rspec (>= 2.99.0, < 4.0)
     json (2.9.1)
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -108,7 +103,6 @@ DEPENDENCIES
   coveralls
   errbit_plugin!
   guard
-  guard-rspec
   rake
   rspec
 
