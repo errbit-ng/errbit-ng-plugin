@@ -3,18 +3,15 @@
 require "spec_helper"
 
 RSpec.describe ErrbitPlugin::Registry do
-  before do
-    ErrbitPlugin::Registry.clear_issue_trackers
-  end
+  before { ErrbitPlugin::Registry.clear_issue_trackers }
 
-  let(:tracker) {
-    tracker = Class.new(ErrbitPlugin::IssueTracker) do
+  let(:tracker) do
+    Class.new(ErrbitPlugin::IssueTracker) do
       def self.label
         "something"
       end
     end
-    tracker
-  }
+  end
 
   describe ".add_issue_tracker" do
     context "with issue_tracker class valid" do
@@ -24,15 +21,19 @@ RSpec.describe ErrbitPlugin::Registry do
           .with(tracker)
           .and_return(double(valid?: true, message: ""))
       end
+
       it "add new issue_tracker plugin" do
         ErrbitPlugin::Registry.add_issue_tracker(tracker)
+
         expect(ErrbitPlugin::Registry.issue_trackers).to eq({
           "something" => tracker
         })
       end
+
       context "with already issue_tracker with this key" do
         it "raise ErrbitPlugin::AlreadyRegisteredError" do
           ErrbitPlugin::Registry.add_issue_tracker(tracker)
+
           expect {
             ErrbitPlugin::Registry.add_issue_tracker(tracker)
           }.to raise_error(ErrbitPlugin::AlreadyRegisteredError)
@@ -46,6 +47,7 @@ RSpec.describe ErrbitPlugin::Registry do
           .to receive(:new)
           .with(tracker)
           .and_return(double(valid?: false, message: "foo", errors: []))
+
         expect {
           ErrbitPlugin::Registry.add_issue_tracker(tracker)
         }.to raise_error(ErrbitPlugin::IncompatibilityError)
