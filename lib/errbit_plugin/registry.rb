@@ -8,10 +8,6 @@ module ErrbitPlugin
   end
 
   class Registry
-    def self.issue_trackers
-      @issue_trackers ||= {}
-    end
-
     def self.add_issue_tracker(klass)
       key = klass.label
 
@@ -30,6 +26,10 @@ module ErrbitPlugin
 
     def self.clear_issue_trackers
       @issue_trackers = {}
+    end
+
+    def self.issue_trackers
+      @issue_trackers ||= {}
     end
   end
 end
