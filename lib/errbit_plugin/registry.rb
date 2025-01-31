@@ -9,7 +9,7 @@ module ErrbitPlugin
 
   class Registry
     def self.issue_trackers
-      @@issue_trackers ||= {}
+      @issue_trackers ||= {}
     end
 
     def self.add_issue_tracker(klass)
@@ -22,14 +22,14 @@ module ErrbitPlugin
       validate = ValidateIssueTracker.new(klass)
 
       if validate.valid?
-        @@issue_trackers[key] = klass
+        @issue_trackers[key] = klass
       else
         raise IncompatibilityError.new(validate.errors.join("; "))
       end
     end
 
     def self.clear_issue_trackers
-      @@issue_trackers = {}
+      @issue_trackers = {}
     end
   end
 end
