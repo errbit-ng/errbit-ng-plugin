@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 module ErrbitPlugin
   class ValidateIssueTracker
+    attr_reader :errors
+
     def initialize(klass)
       @klass = klass
       @errors = []
     end
-    attr_reader :errors
 
     def valid?
       valid_inherit = good_inherit?
@@ -21,6 +24,7 @@ module ErrbitPlugin
         true
       else
         add_errors(:not_inherited)
+
         false
       end
     end
@@ -31,6 +35,7 @@ module ErrbitPlugin
           true
         else
           add_errors(:instance_method_missing, method)
+
           false
         end
       end
@@ -44,6 +49,7 @@ module ErrbitPlugin
           true
         else
           add_errors(:class_method_missing, method)
+
           false
         end
       end

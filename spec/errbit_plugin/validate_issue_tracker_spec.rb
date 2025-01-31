@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
-describe ErrbitPlugin::ValidateIssueTracker do
+RSpec.describe ErrbitPlugin::ValidateIssueTracker do
   describe "#valid?" do
     context "with a complete class" do
       klass = Class.new(ErrbitPlugin::IssueTracker) do
@@ -42,7 +44,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be true
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(true)
       end
     end
 
@@ -89,7 +91,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "not valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be false
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(false)
       end
 
       it "says :not_inherited" do
@@ -135,7 +137,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "not valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be false
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(false)
       end
 
       it "say not implement label method" do
@@ -181,7 +183,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "not valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be false
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(false)
       end
 
       it "say not implement icons method" do
@@ -227,7 +229,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "not valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be false
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(false)
       end
 
       it "say not implement fields method" do
@@ -273,7 +275,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "not valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be false
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(false)
       end
 
       it "say not implement configured? method" do
@@ -319,7 +321,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "not valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be false
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(false)
       end
 
       it "say not implement errors method" do
@@ -365,7 +367,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "not valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be false
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(false)
       end
       it "say not implement create_issue method" do
         is = ErrbitPlugin::ValidateIssueTracker.new(klass)
@@ -411,7 +413,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "is valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be true
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(true)
       end
       it "not say not implement close_issue method" do
         is = ErrbitPlugin::ValidateIssueTracker.new(klass)
@@ -456,7 +458,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "not valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be false
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(false)
       end
 
       it "say not implement url method" do
@@ -502,7 +504,7 @@ describe ErrbitPlugin::ValidateIssueTracker do
       end
 
       it "not valid" do
-        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to be false
+        expect(ErrbitPlugin::ValidateIssueTracker.new(klass).valid?).to eq(false)
       end
 
       it "say not implement note method" do
