@@ -14,7 +14,7 @@ SimpleCov.start do
   primary_coverage :branch
 end
 
-require "errbit_plugin"
+require "errbit-ng-plugin"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
