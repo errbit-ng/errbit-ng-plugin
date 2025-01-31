@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/errbit/ng/plugin/version"
+require_relative "lib/errbit_plugin/version"
 
 Gem::Specification.new do |spec|
   spec.name = "errbit-ng-plugin"
-  spec.version = Errbit::Ng::Plugin::VERSION
+  spec.version = ErrbitPlugin::VERSION
   spec.authors = ["Ihor Zubkov"]
   spec.email = ["igor.zubkov@gmail.com"]
 
